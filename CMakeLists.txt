@@ -36,6 +36,9 @@ pico_sdk_init()
 # Subdiretório da biblioteca BH1750
 add_subdirectory(lib/bh1750_light_sensor)
 
+# Subdiretório da biblioteca SSD1306
+add_subdirectory(lib/ssd1306)
+    
 # Add executable. Default name is the project name, version 0.1
 add_executable(Estufa_Automatizada Estufa_Automatizada.c lib/aht20.c)
 
@@ -54,7 +57,8 @@ target_link_libraries(Estufa_Automatizada
         hardware_i2c
         hardware_clocks
         hardware_pio
-        bh1750_light_sensor)
+        bh1750_light_sensor
+        ssd1306)
 
 # Add the standard include files to the build
 target_include_directories(Estufa_Automatizada PRIVATE
